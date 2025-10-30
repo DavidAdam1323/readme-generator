@@ -20,7 +20,7 @@ This project is licensed under the: MIT License
 - **Email:** davidadamgtr@gmail.com
 - **LinkedIn:** [→ Click here to connect with me!](https://www.linkedin.com/in/davidadamsilva/)
 
-<br /><hr style="height:3px; background-color:#b2b2b2; border:none;"><br />
+<hr style="height:3px; background-color:#b2b2b2; border:none;">
 
 >_“This project was developed as part of the Step8Up Full Stack Web Development Bootcamp's Week 6 coding challenge.”_
 
