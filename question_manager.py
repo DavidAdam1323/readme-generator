@@ -1,20 +1,24 @@
+from InquirerPy import prompt
+
 class QuestionManager:
   def __init__(self):
     self.questions = []
-  
-  def get_basic_questions(self):
+
+  def get_all_questions(self):
     basic_questions = [
       {
         "type": "input",
         "name": "title",
         "message": "What is your project title?",
-        "validate": lambda answer: "Please, enter your project title." if len(answer) == 0 else True
+        "validate": lambda answer: len(answer.strip()) > 0,
+        "invalid_message": "Please, enter your project title."
       },
       {
         "type": "input",
         "name": "description",
         "message": "Write a short description of your project:",
-        "validate": lambda answer: "Please, enter a description." if len(answer) == 0 else True
+        "validate": lambda answer: len(answer.strip()) > 0,
+        "invalid_message": "Please, enter a description."
       },
       {
         "type": "input",
@@ -51,6 +55,11 @@ class QuestionManager:
     
     return basic_questions
   
+  def ask_questions(self):
+    questions = self.get_all_questions()
+    answers = prompt(questions)
+    return answers
+   
   def display_welcome(self):
     print("\n" + "="*50)
     print(" "*17 + "README GENERATOR" + " "*17)
