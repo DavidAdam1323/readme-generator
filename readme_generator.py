@@ -22,9 +22,16 @@ class ReadmeGenerator:
     
     # author and contact details
     content += "## Contact\n\n"
-    content += f"**Author:** {self.answers['author']}\n"
-    content += f"**Email:** {self.answers['email']}\n"
-    content += f"**LinkedIn:** [→ Click here to connect with me!]({self.answers['linkedin']})\n\n"
+    content += f"- **Author:** {self.answers['author']}\n"
+    content += f"- **Email:** {self.answers['email']}\n"
+    content += f"- **LinkedIn:** [→ Click here to connect with me!]({self.answers['linkedin']})\n\n"
+    
+    content += "<br />"
+    content += '<hr style="height:3px; background-color:#b2b2b2; border:none;">'
+    content += "<br />\n\n"
+    
+    # my note message
+    content += f">_“This project was developed as part of the Step8Up Full Stack Web Development Bootcamp's Week 6 coding challenge.”_\n\n"
     
     self.readme_content = content
     return content
