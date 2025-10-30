@@ -1,4 +1,5 @@
 from question_manager import QuestionManager
+from readme_generator import ReadmeGenerator
 
 def main():
   question_manager = QuestionManager()
@@ -7,13 +8,17 @@ def main():
   try:
     answers = question_manager.ask_questions()
     
-    print("\n" + "="*50)
-    print(" "*20 + "THANK YOU!" + " "*20)
-    print("="*50 + "\n")
-    print("Here's what you entered:\n")
+    generator = ReadmeGenerator(answers)
+    generator.generate_content()
     
-    for key, value in answers.items():
-      print(f"{key}: {value}")
+    if generator.save_file():
+      print("\n" + "="*50)
+      print(" "*4 + "Success: README.md file has been created." + " "*4)
+      print("="*50 + "\n")
+    else:
+      print("\n" + "="*50)
+      print(" "*8 + "Error: README.md file not created." + " "*8)
+      print("="*50 + "\n")
       
   except Exception as error:
     print(f"Sorry, there was an error: {error}")
